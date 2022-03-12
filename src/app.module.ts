@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import ormConfig from 'ormconfig';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CatsModule } from './cats/cats.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
-  imports: [CatsModule],
+  imports: [ConfigModule.forRoot(), TypeOrmModule.forRoot(ormConfig), ProductsModule],
   controllers: [AppController],
   providers: [AppService],
 })

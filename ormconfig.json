@@ -1,0 +1,16 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "",
+    "database": "react_node_typescript",
+    "entities": ["dist/src/**/entities/*.entity{.ts,.js}"],
+     "migrations": [
+        "src/migrations/*.ts', 'dist/src/migrations/*{.ts,.js}"
+      ],
+    "cli": {
+      "migrationsDir": "src/migrations"
+    },
+    "synchronize": true
+  }
